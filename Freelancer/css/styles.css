@@ -1,0 +1,289 @@
+:root { /* ":" SIRVE PARA DECLARAR UN SEUDOSELECTORES (Crear Variables CSS) utilizar las variables creadas como valores en las propiedades de cualquier elemento */
+    --blanco: #ffffff;  /* siempre se inicia con "--" cada valor creado */
+    --oscuro: #000000;
+    --primario: #ffc107;
+    --secundario: #0097a7;
+    --gris: #757575;
+    --cian: #addeff;
+}
+
+/* ESTILO PARA TODAS LAS PAGINAS Y USAR EL VALOR REM PARA ADAPTAR EL TAMANO DE LAS LETRAS EN DISTINTOS DISPOSITIVOS, CON ESTO OBLIGAMOS AL VALOR A CAMBIAR REM EN RELACION AL PX (1rem = 10px) */
+html {
+    font-size: 62.5%;
+    scroll-snap-type: y mandatory; /* habilita propiedades scroll snap, "y" o "x" para q se desplace arriba, abajo */
+}
+body {
+     font-size: 16px;
+     font-family: 'Krub', sans-serif; /* codido de Google font, si se incluye en el elementeo "body" aplicara todas las fuentes de la pagina  */
+}
+/* */
+
+h1{
+    font-size: 3.5rem;
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+h3{
+    font-size: 1.5rem;
+}
+
+body {
+    background-image: linear-gradient(to top, var(--cian) 0%, var(--blanco) 100%); /* CODIGO PARA DEGRADAR UNA IMAGEN O COLOR A UN FONDO DE UN ELEMENTO "to top" para q empieze de abajo hacia arriba */
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.sombra {
+    /* CODIGO GENERADO POR BOX SHADOW */
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.5);
+    /* */
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+
+.contenedor {
+    
+    max-width: 120rem; /* tomar como maximo ese tamano asignado */
+    margin: 0 auto 0 auto; /* margen de la etiqueta hacia afuera (arriba derecha abajo izquierda) */
+}
+
+.nav-bg{
+    background-color: var(--secundario); /* declarando el valor secundario */
+}
+
+.navegacion-principal {
+    display: flex; /* habilitar propiedades "Flex Box" */
+    justify-content: space-between; /* separacion igual de cada contenido */
+}
+
+.navegacion-principal a {
+    padding: 1rem 1rem 1rem 1rem; /* margen de la etiqueta hacia adentro (arriba derecha abajo izquierda) */
+    text-decoration: none; /* estilo del texto ("none" sin ningun estilo) */
+    color: var(--blanco); /* color del texto */
+    font-size: 2rem; /* tamano del texto */
+    font-weight: bold; /* espesor de las lineas del texto */
+    text-align: center; /* alineacion del texto */
+}
+
+.navegacion-principal a:hover { /* ":hover" seudoselector para asignar estilo cuando el cursor este sobre el elemento o clase ".navegacion-principal a" */
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /*  para ajustar al tamano de la pantalla */
+    height: 45rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/* CODIGO GENERADO POR BOX SIZING */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* POSICION DE ELEMENTOS (RELATIVO, ABSOLUTO) */
+.contenido-hero {
+    position: absolute;
+    color: var(--blanco);
+    background-color: rgb(0 0 0 / 70%); /* propiedad para darle una transparecian al elemento */
+    width: 100%; /* usamos tanto width"ancho" como height"largo" all 100% para q abarque todo las dimensiones del elemento */
+    height: 100%;
+
+    /* CODIGO DE ALINEACION CENTRADA VERTICAL DE UNO O VARIOS ELEMENTOS */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ubicacion {
+    display: flex ;
+    align-items: flex-end; /* para ubicarlo abajo del margen del elemento */
+}
+
+.boton { /* Estilos para el boton */
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase; /* para cammbiar la letra a mayuscula */
+    border-radius: .5rem;
+    text-align: center;
+    border: none;
+}
+
+.boton:hover {
+    cursor: pointer; /* asignar una mano cuando el cursor este sobre el elemento */
+}
+
+/* SCRROLL SNAP (usado para obligar a la pagina a desplazarse hacea los elementos de las etiquetas declaradas)*/
+.servicios,
+.navegacion-principal,
+.formulario {
+    scroll-snap-align: center;
+    /* scroll-snap-stop: always; */
+}
+/**/
+
+.servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p {
+    line-height: 2; /* SEPARACion entre lineas */
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.formulario {
+    background-color: var(--gris);
+    width: min(60rem, 100%); /* utiliza el valor mas pequeno al cual se le define en min(tamano asignado, del total disponible) */
+    margin: 0 auto; /* para centrar */
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.formulario fieldset {
+    border: none;
+}
+
+.formulario legend {
+    color: var(--primario);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem; 
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+.campo label {
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block; /* tomara todo el espacio disponible de cada campo */
+
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+     border-radius: .5rem;
+     padding: 1rem;
+}
+
+@media (min-width: 740px) { /* Condicion contraria al max-width, ejecutar despues del tamano asignado "741px, 742px..."*/
+    .servicios { 
+        display: grid; /* habilita las propiedades de CSS GRID */
+        grid-template-columns: repeat(3, 1fr); /* determina cuantas columnas tendra el elemento "repeat(numCol, fraccion de la dimension 1/3 o 1fr o 33.3%)" */
+        column-gap: 1rem; /* separacion entre columnas */
+    }
+    .contenedor-campos {
+        display: grid;
+        grid-template-columns: 50%  50%;
+        grid-template-rows: auto auto 25rem;
+        column-gap: 1rem;
+    }
+    
+    .campo:nth-child(3),
+    .campo:nth-child(4) {
+        grid-column: 1/3 ;
+    }
+}
+
+/* PAGINA RESPONSIVE (que se adpten al tamano del dispositivo) */
+@media (max-width: 740px) { /* condicion para ejecutar "max-width" ejecutar antes del tamano asignado "739px, 738px...", pasando ese margen de tamano "741px,742px..." volvera asu elemento normal */
+    .navegacion-principal {
+        flex-direction: column; /* por defecto esta en ROW*/
+    }
+    .boton {
+        width: 90%;
+    }
+    .enviar .boton {
+        width: 100%;   
+    }  
+}
+
+.campo textarea {
+    height:  20rem;
+}
+
+.footer {
+    text-align: center;
+}
+
+
+
+/* OBSERVACIONES
+
+/* ESTRUCTURA DEL CODIGO CSS
+/* elemento {
+        propiedad: valor;
+   }
+
+/* SELECTORES EN CSS (ELEMENTO,CLASE"padre hijo",ID)
+/* ELEMENTO -> seleccionara un elemento en base a su etiqueta y modificara las propiedades a todas.
+/* CLASE -> se puede crear multiples clases a cualquier etiqueta se puede retetir, es reutilizable y aplica cambios de las propiedasdes a todas las etiquetas q contengan esta clase.
+/* ID -> se puede tener multiples ID a cualquier etiqueta no se puede repetir, no es muy usado a comparacion de la CLASE q es el mas usado para no repetir codigo en CSS.
+
+/* ESPECIFICIDAD (si un codigo tiene un selector mas espeficico no importa donde se ha declarado sino por su especificidad)
+   p .class {
+        color: blue; 
+   }
+   p #id {
+        color; green;
+   }
+   p {
+        color: red!important;
+   }
+(OBS "!important" en un valor de una propiedad hara q lo declare como importante y pasara por alto las demas especificidades declaradas)
+
+/* Propiedad "DISPLAY" con valores usados como (block, inline, flex ) Block esta por defecto en cada etiqueta contenido por bloques, Inline se usa para agrupar contenido en una linea.
+
+/* FLEXBOX (podemos utilizar varias propiedades flex box para darle distribucion al contenido, izquierda, derecha, de las etiquetas fila"ROW" o columna"COLUMN", row es aplicado por defecto)
+
+/* BOX SIZING (usado para ignorar el agregado de tamano de los elementos, cuando se usa height"tamano" padding, osea si tu elemento tiene height100px padding10px sumaria 120px de tamano del elemento, este codigo omite eso y respetaria los 100px tamano inical asignado)
+
+/* POSICION DE ELEMENTOS 
+ABSOLUTO -> posicion asignada al elemento padre cuando quiere superposicionar otro elemento hijo
+RELATIVO -> posicion asignada al elemento hijo
+
+/* GRID (a difierencia de FLEXBOX, grid se encarga de distribuir los elementos en cualquier direccion a la vez de uno o varios elementos de una etiqueta)
+
+/* FLEXBOX, UTILIZAR PARA ALINEAR O DISTRIBUIR LOS ELEMENTOS Q ESTARAN DENTRO DE CONTENEDORES COMO EL NAV barra de navegacion
+/* GRID, CREAR LA DISTRIBUCION DE UNA SECCION O CONTENEDORES DE ELEMENTOS.
+
